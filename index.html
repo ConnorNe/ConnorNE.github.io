@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=“UTF-8”>     
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<style>
+	ul {
+    list-style-type: none;
+    margin: 40;
+    padding: 0;
+    overflow: hidden;
+    background-color: #102e55;
+	}
+
+	li {
+    float: left;
+	}
+	li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 18px 16px;
+    text-decoration: none;
+	}
+
+	li a:hover {
+    background-color: #17765b;
+	}
+	
+	IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+	
+	b1 {font-style: italic; font-size: 18px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif}
+	
+	header{ background-color: #C8C8C8 }
+	footer{ background-color: #C8C8C8 }
+	body { background-color: #C8C8DF }
+	
+	
+	</style> 
+	
+</head>
+<body ng-app="myApp">
+    <header>
+	<title>Connor Nettleton-Gooding
+	</title>
+	
+
+	<ul>
+	<li><a href="#!home">HOME</a></li>
+	<li><a href="#!about">ABOUT ME</a></li>
+	<li><a href="#!contact">CONTACT ME</a></li>
+	</ul>
+
+<div ng-view></div>
+	<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/home", {
+        templateUrl : "main.html"
+    })
+    .when("/about", {
+        templateUrl : "aboutMe.html"
+    })
+    .when("/contact", {
+        templateUrl : "ContactMe.html"
+    })
+});
+</script>
+
+    </header> 
+	
+	</p>
+	<b1>
+	<p id="myjson">  </p>
+	</b1>
+	
+	<footer>
+  	<p>Copyright Connor Nettleton-Gooding</p>
+	<p> 
+	<a href="https://www.linkedin.com/in/connor-nettleton-gooding-031a8342"><img src="linkedin.png" height="42em" width="42em"></a>
+	
+	</p>
+	</footer>
+</body>
+</html>
